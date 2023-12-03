@@ -21,7 +21,7 @@ engine = create_engine(conn_str)
 table_ids = ['offer_retailer','categories','brand_category']
 for table_id in table_ids:
   try:
-      df = pd.read_csv(f'{table_id}.csv')
+      df = pd.read_csv(f'../data/{table_id}.csv')
       df.to_sql(table_id, engine, if_exists='replace', index=False)
       print(f"{table_id} DataFrame successfully inserted into PostgreSQL!")
   except Exception as e:

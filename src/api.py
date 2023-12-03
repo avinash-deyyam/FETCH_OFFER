@@ -1,7 +1,5 @@
 from fastapi import FastAPI
 import uvicorn
-import sys
-import os
 from model import prompt, scores
 
 
@@ -13,8 +11,8 @@ async def offer_route(text: str=''):
         return {"text" :"please enter text"}
     else:
         offers = prompt(text)
-        score = scores(offers)
-        if score == 'No offers found':
+        score = scores(offers,text)
+        if type(score) == str:
             return {"text":'No offers found'}
         else:
             return score.to_json(orient="records")

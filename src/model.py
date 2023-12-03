@@ -24,8 +24,6 @@ def flatten_lst(ls):
   return reduce(lambda x,y:x+y, ls)
 
 def prompt(question):
-    # OpenAI API key
-    #os.environ["OPENAI_API_KEY"] = "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"
     # Set up langchain
     pg_uri = f"postgresql+psycopg2://{username}:{password}@{host}/{mydatabase}"
     db = SQLDatabase.from_uri(pg_uri)
@@ -51,12 +49,10 @@ def prompt(question):
     Barilla® pasta, select varieties, buy 2&&Barilla® pasta, select varieties, buy 4&&Barilla® pasta, select varieties, buy 3
 
     The question: {question}"""
-
-    question = 'subway'
     output = db_chain.run(PROMPT.format(question=question))
     return output
 
-def scores(output):
+def scores(output,question):
     embeddings = OpenAIEmbeddings()
     if output == 'No offers found':
         return output
