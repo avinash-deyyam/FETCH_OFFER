@@ -13,9 +13,10 @@ To gauge the relevance of fetched results concerning user queries, the applicati
 **User Interface:**
 The entire application can be accessed through an API. The final output materializes into an intuitive Streamlit-based interface. Seamlessly parsing and presenting LLM-driven insights, this UI empowers users with interactive, user-friendly offer search functionalities.
 
+
 **File Structure:**
 
-[src/api.py](api.py) This file contains POST API built using FastAPI. This can be accessed from streamlit or browser or commandline.
+[src/api.py](api.py) This module contains POST API built using FastAPI. This can be accessed from streamlit or browser or commandline.
 
 [src/model.py](model.py) This module contains offer generation and scoring the generated offers functions. These functions are used in the API to return the final output. 
 
@@ -26,6 +27,7 @@ The entire application can be accessed through an API. The final output material
 [requirements](requirements.txt) This file contains the necessary packages required for this project.
 
 [data/](data/) This folder contains all raw data in csv format.
+
 
 **Usage:**
 
@@ -54,9 +56,10 @@ pip install --upgrade setuptools
 pip install -r requirements.txt
 ```
   
-* There are few things that are mandatory to give to run the application.
+There are few things that are mandatory to give to run the application.
 
 (1) PostgreSQL host address and credentials
+
 (2) OPENAI API key
 
 These are stored as environmental variables in .env file.
@@ -77,15 +80,19 @@ streamlit run stream.py
 
 * API can also be accessed from commandline
 ```bash
-curl -X POST http://0.0.0.0:8080/offers?text=query -H 'Content-Type: application/json'
+curl -X POST 'http://0.0.0.0:8080/offers?text=query' -H 'Content-Type: application/json'
 ```  
 Replace query with your search word
 
 **Sample Results**
 
+<img width="1339" alt="Screenshot 2023-12-03 at 9 20 05 PM" src="https://github.com/avinash-deyyam/FETCH_OFFER/assets/45258206/23cee607-2370-4f29-a653-1739a8885445">
 
 
+<img width="1331" alt="Screenshot 2023-12-03 at 9 20 52 PM" src="https://github.com/avinash-deyyam/FETCH_OFFER/assets/45258206/d4d7ed1a-4f8b-427a-9be3-80e539c44537">
 
 
+<img width="1289" alt="Screenshot 2023-12-03 at 9 27 00 PM" src="https://github.com/avinash-deyyam/FETCH_OFFER/assets/45258206/134def56-e045-4cf5-85b1-57cb1e9b317c">
 
 
+<img width="975" alt="Screenshot 2023-12-03 at 9 32 05 PM" src="https://github.com/avinash-deyyam/FETCH_OFFER/assets/45258206/e41f44fb-e31a-49d1-a5ac-3a37b05067ee">
