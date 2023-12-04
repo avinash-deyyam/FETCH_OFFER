@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 from streamlit_extras.add_vertical_space import add_vertical_space
-import os
+import ast
 
 # Sidebar contents
 
@@ -17,7 +17,7 @@ def main():
 
     if query:
         # URL of your FastAPI endpoint
-        url = "http://0.0.0.0:8080/offers?text=query"  # Replace with your API endpoint URL
+        url = f"http://0.0.0.0:8080/offers?text={query}"  # Replace with your API endpoint URL
 
         # Send POST request to the FastAPI endpoint
         response = requests.post(url)
@@ -27,7 +27,7 @@ def main():
         if 'text' in output:          
             st.write(output['text'])
         else:
-            st.write(output)
+            st.table(ast.literal_eval(output))
 
 if __name__ == '__main__':
     main()
