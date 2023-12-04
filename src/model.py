@@ -54,7 +54,7 @@ def prompt(question):
 
 def scores(output,question):
     embeddings = OpenAIEmbeddings()
-    if output == 'No offers found':
+    if output == 'No offers found' or output == 'No offers found.':
         return output
     elif 'Answer' in output:
         offer_list = ast.literal_eval(output.split('Answer')[0].strip())
