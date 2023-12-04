@@ -84,6 +84,9 @@ curl -X POST 'http://0.0.0.0:8080/offers?text=query' -H 'Content-Type: applicati
 ```  
 Replace query with your search word
 
+<img width="975" alt="Screenshot 2023-12-03 at 9 32 05 PM" src="https://github.com/avinash-deyyam/FETCH_OFFER/assets/45258206/e41f44fb-e31a-49d1-a5ac-3a37b05067ee">
+
+
 **Sample Results**
 
 <img width="1339" alt="Screenshot 2023-12-03 at 9 20 05 PM" src="https://github.com/avinash-deyyam/FETCH_OFFER/assets/45258206/23cee607-2370-4f29-a653-1739a8885445">
@@ -93,6 +96,3 @@ Replace query with your search word
 
 
 <img width="1289" alt="Screenshot 2023-12-03 at 9 27 00 PM" src="https://github.com/avinash-deyyam/FETCH_OFFER/assets/45258206/134def56-e045-4cf5-85b1-57cb1e9b317c">
-
-
-<img width="975" alt="Screenshot 2023-12-03 at 9 32 05 PM" src="https://github.com/avinash-deyyam/FETCH_OFFER/assets/45258206/e41f44fb-e31a-49d1-a5ac-3a37b05067ee">
